@@ -1,10 +1,13 @@
 import React from "react";
-import { StyleSheet, View, ImageBackground, Text } from "react-native";
-
-// Styling
+import { Text } from "react-native";
+import { AppView } from "./styled";
 
 const Home = () => {
-  return <Text>Open up App.js to start working on your app !</Text>;
+  return (
+    <AppView>
+      <Text>Home</Text>
+    </AppView>
+  );
 };
 
 export default Home;

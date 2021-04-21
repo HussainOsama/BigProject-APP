@@ -11,8 +11,9 @@ class AuthStore {
 
   signup = async (userData) => {
     try {
-      await axios.post("http://localhost:8000/signup", userData);
+      const res = await axios.post("http://localhost:8000/signup", userData);
       this.user = decode(res.data.token);
+      console.log(decode(res.data.token));
     } catch (error) {
       console.log("AuthStore -> signup -> error", error);
     }
@@ -22,8 +23,8 @@ class AuthStore {
     try {
       const res = await axios.post("http://localhost:8000/signin", userData);
       this.user = decode(res.data.token);
-      //   console.log(decode(res.data.token));
-      console.log("authStore -> signin -> res.data", res.data);
+      console.log(decode(res.data.token));
+      // console.log("authStore -> signin -> res.data", res.data);
     } catch (error) {
       console.log("AuthStore -> signin -> error", error);
     }
