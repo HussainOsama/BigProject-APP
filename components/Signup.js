@@ -2,12 +2,12 @@ import React from "react";
 import { Text } from "react-native";
 import { AppView } from "../styled";
 
-const Home = () => {
+const Signup = () => {
   return (
     <AppView>
-      <Text>Open up App.js to start working on your app !</Text>
+      <Text>Signup</Text>
     </AppView>
   );
 };
 
-export default Home;
+export default Signup;
