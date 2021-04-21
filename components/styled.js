@@ -12,7 +12,6 @@ export const AuthContainer = styled.View`
   align-self: stretch;
   justify-content: center;
   align-items: center;
-  /* background-color: ${(props) => props.theme.backgroundColor}; */
   padding-right: 60px;
   padding-left: 60px;
 `;
@@ -50,5 +49,10 @@ export const AuthButtonText = styled.Text`
 
 export const AuthOther = styled.Text`
   color: black;
+  margin-top: 15px;
+`;
+
+export const Message = styled.Text`
+  color: red;
   margin-top: 15px;
 `;

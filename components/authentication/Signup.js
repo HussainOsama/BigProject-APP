@@ -10,8 +10,9 @@ import {
 } from "../styled";
 import authStore from "../../stores/authStore";
 
-function Signin({ navigation }) {
+function Signup({ navigation }) {
   const [user, setUser] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -19,17 +20,21 @@ function Signin({ navigation }) {
   const [message, setMessage] = useState("");
 
   const handleSubmit = async () => {
-    await authStore.signin(user);
+    await authStore.signup(user);
     if (authStore.user) {
-      navigation.navigate("Home");
+      navigation.replace("Home");
     } else {
-      setMessage("Wrong email or password");
+      setMessage("Please choose another email");
     }
   };
 
   return (
     <AuthContainer>
-      <AuthTitle>Signin</AuthTitle>
+      <AuthTitle>SignUp</AuthTitle>
+      <AuthTextInput
+        placeholder="Name"
+        onChangeText={(name) => setUser({ ...user, name })}
+      />
       <AuthTextInput
         placeholder="Email"
         onChangeText={(email) => setUser({ ...user, email })}
@@ -41,14 +46,15 @@ function Signin({ navigation }) {
         onChangeText={(password) => setUser({ ...user, password })}
       />
       <Message>{message}</Message>
+
       <AuthButton onPress={handleSubmit}>
-        <AuthButtonText>Sign in</AuthButtonText>
+        <AuthButtonText>Sign up</AuthButtonText>
       </AuthButton>
-      <AuthOther onPress={() => navigation.navigate("Signup")}>
-        Click here to Sign up!
+      <AuthOther onPress={() => navigation.goBack()}>
+        Click here to Log in!
       </AuthOther>
     </AuthContainer>
   );
 }
 
-export default Signin;
+export default Signup;
