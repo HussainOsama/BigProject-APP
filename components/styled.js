@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+// import progressImg from "../assets/progressImg.png";
 
 export const AppView = styled.View`
   flex: 1;
@@ -56,3 +57,82 @@ export const Message = styled.Text`
   color: red;
   margin-top: 15px;
 `;
+
+//------------ Progress Card -----------------
+export const MainView = styled.View`
+  flex: 1;
+  align-items: center;
+  border-radius: 40px;
+`;
+export const ProgressCard = styled.ImageBackground`
+  width: 376px;
+  height: 250px;
+  background-color: red;
+  margin-top: 125px;
+  border-radius: 40px;
+`;
+
+export const MainCard = styled.View`
+  display: flex;
+  width: 376px;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+`;
+
+export const LeftPart = styled.View`
+  width: 188px;
+  height: 210px;
+  align-items: center;
+  justify-content: space-around;
+`;
+export const RightPart = styled.View`
+  width: 188px;
+  height: 210px;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+export const Income = styled.Text`
+  border: 2px solid #517501;
+  color: #517501;
+  text-align: center;
+  width: 100px;
+  padding: 6px;
+  border-radius: 10px;
+`;
+
+export const Expenses = styled.Text`
+  border: 2px solid #fb0f5a;
+  color: #fb0f5a;
+  text-align: center;
+  width: 100px;
+  padding: 6px;
+  border-radius: 10px;
+`;
+
+export const Salary = styled.Text`
+  border: 2px solid white;
+  color: white;
+  text-align: center;
+  width: 100px;
+  padding: 6px;
+  border-radius: 10px;
+`;
+
+export const DateSection = styled.Text`
+  border: 2px solid white;
+  color: white;
+  text-align: center;
+  width: 100px;
+  padding: 6px;
+  border-radius: 10px;
+`;
+
+export const CardSection = styled.View`
+  display: flex;
+  align-items: center;
+`;
+
+//------------ Progress Card -----------------
