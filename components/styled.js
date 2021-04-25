@@ -7,6 +7,16 @@ export const AppView = styled.View`
   justify-content: center;
 `;
 
+export const ButtonContainer = styled.View`
+  background-color: red;
+
+  height: 45px;
+  width: 45px;
+
+  align-items: center;
+  justify-content: center;
+`;
+
 export const AuthContainer = styled.View`
   flex: 1;
   align-self: stretch;
@@ -55,4 +65,31 @@ export const AuthOther = styled.Text`
 export const Message = styled.Text`
   color: red;
   margin-top: 15px;
+`;
+
+export const PieCard = styled.View`
+  background-color: aqua;
+
+  width: 400px;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+`;
+
+export const MainCard = styled.View`
+  display: flex;
+  width: 376px;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+`;
+
+export const ProgressCard = styled.ImageBackground`
+  width: 376px;
+  height: 250px;
+  background-color: red;
+  margin-top: 125px;
+  border-radius: 40px;
 `;
