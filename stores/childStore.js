@@ -6,6 +6,8 @@ import { action, makeAutoObservable, observable } from "mobx";
 //**** Imports ****//
 import instance from "./instance";
 
+import authStore from "./authStore";
+
 //**** Code ****//
 
 class ChildStore {
@@ -22,7 +24,9 @@ class ChildStore {
 
   fetchChilds = async () => {
     try {
-      const response = await instance.get("/child");
+      console.log("UserId below");
+      console.log(authStore.user.id);
+      const response = await instance.get(`/child/${authStore.user.id}`);
       this.childs = response.data;
       this.loading = false;
       console.log(this.childs);
@@ -33,6 +37,6 @@ class ChildStore {
 }
 
 const childStore = new ChildStore();
-// childStore.fetchChilds();
+childStore.fetchChilds();
 
 export default childStore;

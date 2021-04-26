@@ -26,11 +26,12 @@ class AuthStore {
   };
 
   setUser = async (token) => {
+    console.log("I'm here in setUser");
     await AsyncStorage.setItem("myToken", token);
     instance.defaults.headers.common.Authorization = `Bearer ${token}`;
-    fetchUser();
+    // fetchUser();
     this.user = decode(token);
-    console.log(token);
+    console.log(this.user);
   };
 
   signup = async (userData) => {
@@ -55,6 +56,7 @@ class AuthStore {
   };
   checkForToken = async () => {
     const token = await AsyncStorage.getItem("myToken");
+
     if (token) {
       const decodedToken = decode(token);
       if (Date.now() < decodedToken.exp) {
@@ -68,4 +70,5 @@ class AuthStore {
 
 const authStore = new AuthStore();
 authStore.checkForToken();
+// authStore.fetchUser();
 export default authStore;

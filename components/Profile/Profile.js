@@ -1,13 +1,13 @@
 import React from "react";
 import { View, SafeAreaView, StyleSheet } from "react-native";
 import { Avatar, Title, Caption } from "react-native-paper";
-import { users } from "../../Data";
 import ChildList from "../ChildList";
 import childStore from "../../stores/childStore";
 import authStore from "../../stores/authStore";
 import { observer } from "mobx-react";
 
 const Profile = ({ navigation }) => {
+  console.log(authStore.user.id);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfoSection}>
@@ -35,11 +35,11 @@ const Profile = ({ navigation }) => {
                   },
                 ]}
               >
-                {authStore.user.email}
+                {authStore.user.name}
               </Title>
             </View>
             <View style={{ alignItems: "center" }}>
-              <Caption style={styles.caption}>{users.email}</Caption>
+              <Caption style={styles.caption}>{authStore.user.email}</Caption>
             </View>
           </View>
         </View>

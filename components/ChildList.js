@@ -9,10 +9,9 @@ import { useEffect } from "react";
 
 const ChildList = () => {
   useEffect(() => {
-    console.log("WE are here");
+    console.log("We are here");
     childStore.fetchChilds();
   }, []);
-  // console.log(childs);
   const childlist = childStore.childs.map((child) => (
     <ChildItem child={child} key={child.childId} />
   ));
