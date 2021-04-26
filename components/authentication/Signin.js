@@ -9,6 +9,7 @@ import {
   Message,
 } from "../styled";
 import authStore from "../../stores/authStore";
+import { observer } from "mobx-react";
 
 function Signin({ navigation }) {
   const [user, setUser] = useState({
@@ -51,4 +52,4 @@ function Signin({ navigation }) {
   );
 }
 
-export default Signin;
+export default observer(Signin);

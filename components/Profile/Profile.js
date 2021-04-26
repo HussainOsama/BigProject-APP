@@ -1,13 +1,13 @@
 import React from "react";
 import { View, SafeAreaView, StyleSheet } from "react-native";
 import { Avatar, Title, Caption } from "react-native-paper";
-import { users, childs } from "../../Data";
+import { users } from "../../Data";
 import ChildList from "../ChildList";
+import childStore from "../../stores/childStore";
+import authStore from "../../stores/authStore";
+import { observer } from "mobx-react";
 
 const Profile = ({ navigation }) => {
-  let newArray = childs.filter((x) => x.userId == 1);
-  // newArray.forEach((x) => console.log(x));
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfoSection}>
@@ -35,7 +35,7 @@ const Profile = ({ navigation }) => {
                   },
                 ]}
               >
-                {users[0].name}
+                {authStore.user.email}
               </Title>
             </View>
             <View style={{ alignItems: "center" }}>
@@ -54,25 +54,25 @@ const Profile = ({ navigation }) => {
             },
           ]}
         >
-          <Title>KD {users[0].salary}</Title>
+          <Title>KD {authStore.user.salary}</Title>
           <Caption>Salary</Caption>
         </View>
         <View style={styles.infoBox}>
-          <Title>{users[0].salaryDate}</Title>
+          <Title>{authStore.user.salaryDate}</Title>
           <Caption>Salary Date</Caption>
         </View>
       </View>
-      {newArray.length > 0 ? (
+      {childStore.childs.length > 0 ? (
         <View style={[styles.childInfoSection, { alignItems: "center" }]}>
           <Title style={styles.childTitle}>Children</Title>
-          <ChildList childs={newArray} />
+          <ChildList />
         </View>
       ) : null}
     </SafeAreaView>
   );
 };
 
-export default Profile;
+export default observer(Profile);
 
 const styles = StyleSheet.create({
   container: {
