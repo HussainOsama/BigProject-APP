@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FloatingAction } from "react-native-floating-action";
-import { NativeModules, Text, View } from "react-native";
+import { NativeModules, Text, TextInput, View } from "react-native";
 import Card from "../progressCard/Card";
 import { Alert, Modal, StyleSheet, Pressable } from "react-native";
+import { RadioButton } from "react-native-paper";
 
 function FloatingButton() {
   const actions = [
@@ -21,6 +22,8 @@ function FloatingButton() {
   }
 
   const [modalVisible, setModalVisible] = useState(false);
+  const [value, setValue] = useState("");
+  const [checked, setChecked] = React.useState("Income");
 
   return (
     <>
@@ -39,10 +42,36 @@ function FloatingButton() {
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
+            {/* <Text style={styles.modalText}>Hello World!</Text> */}
+            <TextInput
+              placeholder="Value"
+              onChangeText={(value) => setValue(value)}
+            />
+            <View>
+              <Text>Income</Text>
+
+              <RadioButton
+                value="Income"
+                color="green"
+                status={checked === "Income" ? "checked" : "unchecked"}
+                onPress={() => setChecked("Income")}
+              />
+              <Text>Expense</Text>
+              <RadioButton
+                value="expense"
+                color="red"
+                status={checked === "expense" ? "checked" : "unchecked"}
+                onPress={() => setChecked("expense")}
+              />
+            </View>
+
             <Pressable
               style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
+              onPress={() => {
+                console.log(value);
+                console.log(checked);
+                setModalVisible(!modalVisible);
+              }}
             >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Pressable>
@@ -52,7 +81,7 @@ function FloatingButton() {
       <FloatingAction
         actions={actions}
         color={"#87E4FF"}
-        onPressItem={(name) => console.log(name)}
+        onPressItem={() => setModalVisible(true)}
       />
     </>
   );
