@@ -15,6 +15,8 @@ function Signup({ navigation }) {
     name: "",
     email: "",
     password: "",
+    salary: "",
+    salaryDate: "",
   });
 
   const [message, setMessage] = useState("");
@@ -34,6 +36,14 @@ function Signup({ navigation }) {
       <AuthTextInput
         placeholder="Name"
         onChangeText={(name) => setUser({ ...user, name })}
+      />
+      <AuthTextInput
+        placeholder="Salary"
+        onChangeText={(salary) => setUser({ ...user, salary })}
+      />
+      <AuthTextInput
+        placeholder="Salary Date"
+        onChangeText={(salaryDate) => setUser({ ...user, salaryDate })}
       />
       <AuthTextInput
         placeholder="Email"
