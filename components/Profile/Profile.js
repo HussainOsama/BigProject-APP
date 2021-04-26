@@ -7,7 +7,6 @@ import authStore from "../../stores/authStore";
 import { observer } from "mobx-react";
 
 const Profile = ({ navigation }) => {
-  console.log(authStore.user.id);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfoSection}>

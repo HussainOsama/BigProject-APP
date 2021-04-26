@@ -4,7 +4,7 @@ import { View } from "react-native";
 import { InfoBoxWrapper, ChildinfoBox, ChildNameCaption } from "./styled";
 
 const ChildItem = ({ child }) => {
-  console.log(child);
+  // console.log(child);
   return (
     <View>
       <ChildNameCaption>{child.name}</ChildNameCaption>

@@ -9,11 +9,11 @@ import { useEffect } from "react";
 
 const ChildList = () => {
   useEffect(() => {
-    console.log("We are here");
-    childStore.fetchChilds();
+    // console.log("We are here");
+    // childStore.fetchChilds();
   }, []);
   const childlist = childStore.childs.map((child) => (
-    <ChildItem child={child} key={child.childId} />
+    <ChildItem child={child} key={child.id} />
   ));
   if (childStore.loading) return <Spinner />;
   return <View>{childlist}</View>;
