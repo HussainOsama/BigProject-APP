@@ -1,5 +1,9 @@
-import styled from "styled-components/native";
+
+//import styled from "styled-components/native";
 // import progressImg from "../assets/progressImg.png";
+
+import styled from "styled-components";
+
 
 export const AppView = styled.View`
   flex: 1;
@@ -134,5 +138,31 @@ export const CardSection = styled.View`
   display: flex;
   align-items: center;
 `;
-
 //------------ Progress Card -----------------
+
+
+export const InfoBoxWrapper = styled.View`
+  border-bottom-color: #dddddd;
+  border-bottom-width: 1;
+  border-top-color: #dddddd;
+  border-top-width: 1;
+  flex-direction: row;
+  height: 100;
+`;
+
+export const ChildinfoBox = styled.View`
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  border-right-color: #dddddd;
+  border-right-width: 1;
+  border-left-color: #dddddd;
+  border-left-width: 1;
+`;
+
+export const ChildNameCaption = styled.Text`
+  font-size: 14;
+  line-height: 14;
+  font-weight: 500;
+  margin-top: 10;
+`;
