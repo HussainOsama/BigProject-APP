@@ -12,6 +12,16 @@ export const AppView = styled.View`
   justify-content: center;
 `;
 
+export const ButtonContainer = styled.View`
+  background-color: red;
+
+  height: 45px;
+  width: 45px;
+
+  align-items: center;
+  justify-content: center;
+`;
+
 export const AuthContainer = styled.View`
   flex: 1;
   align-self: stretch;
@@ -62,6 +72,16 @@ export const Message = styled.Text`
   margin-top: 15px;
 `;
 
+
+export const PieCard = styled.View`
+  background-color: aqua;
+
+  width: 400px;
+  height: 400px;
+
+  display: flex;
+  justify-content: center;
+
 //------------ Progress Card -----------------
 export const MainView = styled.View`
   flex: 1;
@@ -74,6 +94,7 @@ export const ProgressCard = styled.ImageBackground`
   background-color: red;
   margin-top: 125px;
   border-radius: 40px;
+
 `;
 
 export const MainCard = styled.View`
@@ -84,6 +105,8 @@ export const MainCard = styled.View`
   align-items: center;
   flex-direction: row;
 `;
+
+
 
 export const LeftPart = styled.View`
   width: 188px;
