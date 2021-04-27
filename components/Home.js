@@ -1,19 +1,19 @@
 import React from "react";
 import { Text } from "react-native";
-import Chart from "./charts/PieChart";
-import { AppView, MainCard, ProgressCard } from "./styled";
+
+import { AppView } from "./styled";
+import Donut from "./progressCard/Donut";
+import Card from "./progressCard/Card";
+import FloatingButton from "./floatingButton/FloatingButton";
+import Modal from "./floatingButton/Modal";
 
 const Home = () => {
-  return (
-    <AppView>
-      <Text>Home</Text>
-      <Text>Expenses</Text>
+  return <FloatingButton />;
 
-      <MainCard>
-        <Chart />
-      </MainCard>
-    </AppView>
-  );
+  // <AppView>
+  //   <Text>Home</Text>
+  // </AppView>
+
 };
 
 export default Home;
